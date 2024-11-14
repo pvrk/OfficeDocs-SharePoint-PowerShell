@@ -1,0 +1,35 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Returns the Opt-In Copilot promo status for the tenant.
+module: Microsoft.Online.SharePoint.PowerShell
+links:
+- text: Set-SPOCopilotPromoOptInStatus
+  href: ./Set-SPOCopilotPromoOptInStatus.yml
+- text: Getting started with SharePoint Online Management Shell
+  href: /powershell/sharepoint/sharepoint-online/connect-sharepoint-online
+syntaxes:
+- Get-SPOCopilotPromoOptInStatus
+examples:
+- title: Example 1
+  code: |-
+    Get-SPOCopilotPromoOptInStatusEnabled
+  description: |-
+    Example 1 returns the value of the Opt-In promo status.
+  summary: ""
+applicable:
+- SharePoint Online
+uid: Microsoft.Online.SharePoint.PowerShell.Get-SPOCopilotPromoOptInStatus
+name: Get-SPOCopilotPromoOptInStatus
+description: |-
+  This cmdlet returns the Opt-In Copilot promo status for the tenant.
+  If the promo status is enabled, the return value is `True`, otherwise the return value is `False`.
+metadata:
+  external help file: sharepointonline.xml
+  Module Name: Microsoft.Online.SharePoint.PowerShell
+  online version: https://learn.microsoft.com/powershell/module/sharepoint-online/Get-SPOCopilotPromoOptInStatus
+  applicable: SharePoint Online
+  title: Get-SPOCopilotPromoOptInStatus
+  PlatyPS schema version: ""
+  author: siruvanti
+  ms.author: siruvanti
+  ms.reviewer: ""

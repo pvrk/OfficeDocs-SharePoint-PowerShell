@@ -1,0 +1,113 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  This cmdlet enables the administrator to check status of all active and available reports about insights on sites protected and access denials by restricted access control.
+module: Microsoft.Online.SharePoint.PowerShell
+links:
+- text: Getting started with SharePoint Online Management Shell
+  href: /powershell/sharepoint/sharepoint-online/connect-sharepoint-online
+- text: Start-SPORestrictedAccessForSitesInsights
+  href: ./Start-SPORestrictedAccessForSitesInsights.yml
+syntaxes:
+- Get-SPORestrictedAccessForSitesInsights -ActionsBlockedByPolicy [-ReportId <Guid>] [-Content <ContentType>] [-Action <ActionType>]
+examples:
+- title: '-----------------------EXAMPLE 1-----------------------------'
+  code: |-
+    Get-SPORestrictedAccessForSitesInsights -RACProtectedSites
+  description: |-
+    Example 1 enables administrator to view the status of all active and completed reports on list of sites protected with restricted access control.
+  summary: ""
+- title: '-----------------------EXAMPLE 2-----------------------------'
+  code: |-
+    Get-SPORestrictedAccessForSitesInsights -RACProtectedSites -ReportId 9d946216-afe7-49f5-8267-7b662435c70b
+  description: |-
+    Example 2 enables administrator to view the report containing list of sites protected with restricted access control with ReportId: `9d946216-afe7-49f5-8267-7b662435c70b`
+  summary: ""
+- title: '-----------------------EXAMPLE 3-----------------------------'
+  code: |-
+    Get-SPORestrictedAccessForSitesInsights -ActionsBlockedByPolicy -ReportId 9d946216-afe7-49f5-8267-7b662435c70b -Content TopSites
+  description: |-
+    Example 3 enables administrator to view the report containing top sites with access denials due to restricted access control with ReportId: `9d946216-afe7-49f5-8267-7b662435c70b`.
+  summary: ""
+parameters:
+- type: <xref href="ActionType" data-throw-if-not-resolved="False" />
+  name: Action
+  description: |+
+    It is an optional parameter, and it specifies whether to view or download a specific report.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  applicable:
+  - SharePoint Online
+  parameterValueGroup: ""
+- type: <xref href="SwitchParameter" data-throw-if-not-resolved="False" />
+  name: ActionsBlockedByPolicy
+  description: |+
+    It is an optional parameter, and it specifies the type of report to be viewed or downloaded.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  applicable:
+  - SharePoint Online
+  parameterValueGroup: ""
+- type: <xref href="ContentType" data-throw-if-not-resolved="False" />
+  name: Content
+  description: |+
+    It is an optional parameter, and it specifies the subtype of the report to be viewed or downloaded.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  applicable:
+  - SharePoint Online
+  parameterValueGroup: ""
+- type: <xref href="Bool" data-throw-if-not-resolved="False" />
+  name: InsightsSummary
+  description: |+
+    It is an optional parameter, and it specifies the subtype of the report to be viewed or downloaded.
+
+  defaultValue: "True"
+  position: Named
+  aliases: ""
+  applicable:
+  - SharePoint Online
+  parameterValueGroup: ""
+- type: <xref href="SwitchParameter" data-throw-if-not-resolved="False" />
+  name: RACProtectedSites
+  description: |+
+    It is an optional parameter, and it specifies the type of report to be viewed or downloaded.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  applicable:
+  - SharePoint Online
+  parameterValueGroup: ""
+- type: <xref href="Guid" data-throw-if-not-resolved="False" />
+  name: ReportId
+  description: |+
+    It is an optional parameter, and it specifies the unique Id of the report to be viewed or downloaded.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  applicable:
+  - SharePoint Online
+  parameterValueGroup: ""
+applicable:
+- SharePoint Online
+uid: Microsoft.Online.SharePoint.PowerShell.Get-SPORestrictedAccessForSitesInsights
+name: Get-SPORestrictedAccessForSitesInsights
+description: "If this cmdlet is executed with `-RACProtectedSites` as parameter, it displays the status of all the active and completed reports.\r\n\r\nIf this cmdlet is executed with `-RACProtectedSites` `-ReportId` as parameter, top 100 sites with the highest page views that are protected by restricted access control will be displayed.\r\n\r\nIf this cmdlet is executed with `-RACProtectedSites` `-ReportId` `-InsightsSummary` as parameter, the count of sites protected with restricted access control compared to total number of sites will be displayed.\r\n\r\nIf this cmdlet is executed with `-ActionsBlockedByPolicy` as parameter, it displays the status of all active and completed reports.\r\n  \r\nIf this cmdlet is executed with `-ActionsBlockedByPolicy` `-ReportId` `-Content TopSites` as parameter, top 100 sites with the highest access denials by restricted access control will be displayed.\r\n\r\nIf this cmdlet is executed with `-ActionsBlockedByPolicy` `-ReportId` `-Content TopUsers` as parameter, top 10 users with the highest access denials by restricted access control will be displayed.\r\n\r\nIf this cmdlet is executed with `-ActionsBlockedByPolicy` `-ReportId` `-Content AllDenials` as parameter, most recent 100 access denials by restricted access control in the last 28 days will be displayed.\r\n\r\nIf this cmdlet is executed with `-ActionsBlockedByPolicy` `-ReportId` `-Content SiteDistribution` as parameter, distribution of access denials by restricted access control on different site types will be displayed.\r\n\r\n> [!NOTE]\r\n> All reports adhere to any retention timeline as per [Data Access Governance](/sharepoint/data-access-governance-reports)."
+metadata:
+  external help file: sharepointonline.xml
+  Module Name: Microsoft.Online.SharePoint.PowerShell
+  online version: https://learn.microsoft.com/powershell/module/sharepoint-online/get-sporestrictedaccessforsitesinsights
+  applicable: SharePoint Online
+  title: Get-SPORestrictedAccessForSitesInsights
+  PlatyPS schema version: 2.0.0
+  author: ishwarit
+  ms.author: itambakhe
+  ms.reviewer: ""
+  manager: ""

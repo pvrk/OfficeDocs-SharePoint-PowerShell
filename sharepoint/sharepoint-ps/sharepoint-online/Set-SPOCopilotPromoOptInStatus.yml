@@ -1,0 +1,50 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Sets the Opt-In Copilot promo status for the tenant.
+module: Microsoft.Online.SharePoint.PowerShell
+links:
+- text: Get-SPOCopilotPromoOptInStatus
+  href: ./Get-SPOCopilotPromoOptInStatus.yml
+- text: Getting started with SharePoint Online Management Shell
+  href: /powershell/sharepoint/sharepoint-online/connect-sharepoint-online
+syntaxes:
+- Set-SPOCopilotPromoOptInStatus -IsCopilotPromoStatusEnabled <Boolean>
+examples:
+- title: Example 1
+  code: |-
+    Set-SPOCopilotPromoOptInStatusSetSuccessfully -SPOCopilotPromoOptInStatusEnabled $true
+  description: |-
+    Example 1 sets the Opt-In Copilot promo status for the tenant to `True`.
+  summary: ""
+- title: 'Parameter:'
+  description: ""
+  summary: ""
+- title: -IsCopilotPromoStatusEnabled
+  code: |-
+    Type: Boolean
+    Parameter Sets: 
+    Aliases:
+    Applicable: SharePoint Online
+
+    Required: True
+    Default value: None
+  description: ""
+  summary: |+
+    Use this parameter to set Copilot opt-in promo status. 
+
+applicable:
+- SharePoint Online
+uid: Microsoft.Online.SharePoint.PowerShell.Set-SPOCopilotPromoOptInStatus
+name: Set-SPOCopilotPromoOptInStatus
+description: |-
+  This cmdlet sets the Opt-In Copilot promo status for the tenant to `True` or `False`.
+metadata:
+  external help file: sharepointonline.xml
+  Module Name: Microsoft.Online.SharePoint.PowerShell
+  online version: https://learn.microsoft.com/powershell/module/sharepoint-online/Set-SPOCopilotPromoOptInStatus
+  applicable: SharePoint Online
+  title: Set-SPOCopilotPromoOptInStatus
+  PlatyPS schema version: ""
+  author: siruvanti
+  ms.author: siruvanti
+  ms.reviewer: ""
