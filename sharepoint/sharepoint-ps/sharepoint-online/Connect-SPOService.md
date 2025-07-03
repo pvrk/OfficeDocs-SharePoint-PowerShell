@@ -5,8 +5,8 @@ online version: https://learn.microsoft.com/powershell/module/sharepoint-online/
 applicable: SharePoint Online
 title: Connect-SPOService
 schema: 2.0.0
-author: trent-green
-ms.author: trgreen
+author: ShreyasSar26
+ms.author: shsaravanan
 ms.reviewer:
 ---
 
@@ -14,28 +14,29 @@ ms.reviewer:
 
 ## SYNOPSIS
 
-Connects a SharePoint Online administrator to a SharePoint Online connection (the SharePoint Online Administration Center).
+Connects the SharePoint Online Administrator or the SharePoint Embedded Administrator to a SharePoint Online connection (the SharePoint Online Administration Center).
 This cmdlet must be run before any other SharePoint Online cmdlets can run.
 
 ## SYNTAX
 
 ### AuthenticationUrl
-
-```powershell
-Connect-SPOService -AuthenticationUrl <String> [-ClientTag <String>] [-Credential <CredentialCmdletPipeBind>]
- -Url <UrlCmdletPipeBind> -ModernAuth <Boolean> [<CommonParameters>] 
+```
+Connect-SPOService [-Url] <UrlCmdletPipeBind> [[-Credential] <CredentialCmdletPipeBind>]
+ [[-ClientTag] <String>] [-AuthenticationUrl] <String> [[-ModernAuth] <Boolean>]
+ [[-UseSystemBrowser] <Boolean>] [<CommonParameters>]
 ```
 
 ### AuthenticationLocation
 
-```powershell
-Connect-SPOService [-ClientTag <String>] [-Credential <CredentialCmdletPipeBind>]
- [-Region <AADCrossTenantAuthenticationLocation>] -Url <UrlCmdletPipeBind> [<CommonParameters>]
+```
+Connect-SPOService [-Url] <UrlCmdletPipeBind> [[-Credential] <CredentialCmdletPipeBind>]
+ [[-ClientTag] <String>] [[-Region] <AADCrossTenantAuthenticationLocation>] [[-ModernAuth] <Boolean>]
+ [[-UseSystemBrowser] <Boolean>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The `Connect-SPOService` cmdlet connects a SharePoint Online administrator to the SharePoint Online Administration Center.
+The `Connect-SPOService` cmdlet connects the SharePoint Online Administrator or the SharePoint Embedded Administrator to the SharePoint Online Administration Center.
 
 Only a single SharePoint Online service connection is maintained from any single Windows PowerShell session.
 In other words, this is a per-geo within an organization administrator connection.
@@ -44,9 +45,9 @@ The Windows PowerShell session will be set to serve the new SharePoint Online ad
 
 A delegated partner administrator has to swap connections for different organizations within the same Windows PowerShell session.
 
-You must be a SharePoint Online administrator to run the cmdlet.
+You must be a SharePoint Online Administrator or a SharePoint Embedded Administrator to run the cmdlet.
 
-For permissions and the most current information about Windows PowerShell for SharePoint Online, see the online documentation at [Intro to SharePoint Online Management Shell](https://learn.microsoft.com/powershell/sharepoint/sharepoint-online/introduction-sharepoint-online-management-shell?view=sharepoint-ps).
+For permissions and the most current information about Windows PowerShell for SharePoint Online, see the online documentation at [Intro to SharePoint Online Management Shell](/powershell/sharepoint/sharepoint-online/introduction-sharepoint-online-management-shell?view=sharepoint-ps).
 
 ## EXAMPLES
 
@@ -91,6 +92,13 @@ Connects to a SharePoint Online Administration Center specifying the region.
 Connect-SPOService -Credential $creds -Url https://tenant-admin.sharepoint.com -ModernAuth $true -AuthenticationUrl https://login.microsoftonline.com/organizations
 ```
 Connecting to SPO Service with ModernAuth Flag.
+
+### -----------------------EXAMPLE 6-----------------------------
+
+ ```powershell
+Connect-SPOService -Url https://contoso-admin.sharepoint.com -UseSystemBrowser $true
+```
+Authenticates using the Microsoft Authentication Library (MSAL) and connects to the SharePoint Online Administration Center on successful authentication.
 
 ## PARAMETERS
 
@@ -200,16 +208,26 @@ Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
+### -UseSystemBrowser
+
+ Used to authenticate the user using the Microsoft Authentication Library (MSAL).
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+Applicable: SharePoint Online
+Required: False
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-ProgressAction`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
-## INPUTS
-
-## OUTPUTS
-
-## NOTES
 
 ## RELATED LINKS
 
